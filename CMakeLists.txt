@@ -24,7 +24,7 @@ IF(NOT CROSS_TARGET STREQUAL darwin-x64)
   SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libgcc -static-libstdc++")
 ENDIF()
 
-PROJECT(tagger VERSION 0.0.1)
+PROJECT(tagit VERSION 0.0.1)
 
 CONFIGURE_FILE(
   "${PROJECT_SOURCE_DIR}/tagit_config.h.in"
