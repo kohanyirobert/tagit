@@ -22,6 +22,12 @@ int main(int argc, char * argv[]) {
     TagLib::String n(argv[2]);
     if (c == 'd') {
       m.erase(n);
+    } else if (c == 'g') {
+      if (m.contains(n)) {
+        std::cout << m[n] << std::endl;
+      } else {
+        return 1;
+      }
     } else {
       TagLib::String v(argv[3], TagLib::String::UTF8);
       if (c == 'r') {
