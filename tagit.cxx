@@ -2,6 +2,7 @@
 
 #include <fileref.h>
 #include <tstring.h>
+#include <tstringlist.h>
 #include <tpropertymap.h>
 
 #include <tagit_config.h>
@@ -24,7 +25,9 @@ int main(int argc, char * argv[]) {
       m.erase(n);
     } else if (c == 'g') {
       if (m.contains(n)) {
-        std::cout << m[n] << std::endl;
+        TagLib::StringList l = m[n];
+        TagLib::String v = l[0];
+        std::cout << v.toCString(true) << std::endl;
       } else {
         return 1;
       }
