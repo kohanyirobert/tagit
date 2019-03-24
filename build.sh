@@ -24,7 +24,11 @@ else
   image=multiarch/crossbuild:latest
 fi
 
-docker run \
+# INFO: MSYS2 mangles path names for Docker.
+# https://stackoverflow.com/questions/53014998
+# https://github.com/msys2/msys2/wiki/Porting#filesystem-namespaces
+# http://www.mingw.org/wiki/posix_path_conversion
+MSYS2_ARG_CONV_EXCL="*" docker run \
   --rm \
   --interactive \
   --volume $PWD:/workdir \
